@@ -1,0 +1,46 @@
+{
+    "extends": [
+        "config:base",
+        "group:allNonMajor",
+        ":semanticCommitTypeAll(chore)",
+        ":maintainLockFilesWeekly"
+    ],
+    "rangeStrategy": "bump",
+    "prHourlyLimit": 4,
+    "stabilityDays": 3,
+    "npm": {
+        "commitMessageTopic": "{{prettyDepType}} {{depName}}",
+        "rollbackPrs": true
+    },
+    "packageRules": [
+        {
+            "dependencyDashboardApproval": true,
+            "matchUpdateTypes": [
+                "major"
+            ]
+        },
+        {
+            "matchUpdateTypes": [
+                "minor",
+                "patch",
+                "pin",
+                "digest"
+            ],
+            "schedule": [
+                "after 2am and before 3am"
+            ]
+        },
+        {
+            "matchDepTypes": [
+                "devDependencies"
+            ],
+            "prPriority": -1
+        }
+    ],
+    "lockFileMaintenance": {
+        "enabled": true,
+        "schedule": [
+            "before 4am on monday"
+        ]
+    }
+}

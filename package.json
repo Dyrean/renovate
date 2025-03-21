@@ -1,0 +1,23 @@
+{
+  "name": "renovate",
+  "version": "1.0.0",
+  "description": "Renovate bot config",
+  "license": "MIT",
+  "homepage": "https://github.com/dyrean/renovate",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dyrean/renovate.git"
+  },
+  "files": [
+    "default.json"
+  ],
+  "scripts": {
+    "validate": "renovate-config-validator",
+    "test": "pnpm validate",
+    "prepare": "pnpm test"
+  },
+  "devDependencies": {
+    "renovate": "latest"
+  },
+  "packageManager": "pnpm@10.6.4"
+}
